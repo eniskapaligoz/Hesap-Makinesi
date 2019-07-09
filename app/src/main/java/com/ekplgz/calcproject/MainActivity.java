@@ -40,65 +40,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-
     }
 
-    @OnClick(R.id.button0)
-    public void btn0Clicked(Button btn){
-        editText.setText(editText.getText() + "0");
+    @OnClick({R.id.button0,R.id.button1,R.id.button2,R.id.button3,R.id.button4,R.id.button5,R.id.button6,R.id.button7,R.id.button8,R.id.button9,R.id.button10})
+    public void numButtonClicked(Button numButton){
+        editText.setText(editText.getText() + numButton.getText().toString());
     }
-
-    @OnClick(R.id.button1)
-    public void btn1Clicked(Button btn){
-        editText.setText(editText.getText() + "1");
-    }
-
-    @OnClick(R.id.button2)
-    public void btn2Clicked(Button btn){
-        editText.setText(editText.getText() + "2");
-    }
-
-    @OnClick(R.id.button3)
-    public void btn3Clicked(Button btn){
-        editText.setText(editText.getText() + "3");
-    }
-
-    @OnClick(R.id.button4)
-    public void btn4Clicked(Button btn){
-        editText.setText(editText.getText() + "4");
-    }
-
-    @OnClick(R.id.button5)
-    public void btn5Clicked(Button btn){
-        editText.setText(editText.getText() + "5");
-    }
-
-    @OnClick(R.id.button6)
-    public void btn6Clicked(Button btn){
-        editText.setText(editText.getText() + "6");
-    }
-
-    @OnClick(R.id.button7)
-    public void btn7Clicked(Button btn){
-        editText.setText(editText.getText() + "7");
-
-    }
-    @OnClick(R.id.button8)
-    public void btn8Clicked(Button btn){
-        editText.setText(editText.getText() + "8");
-    }
-
-    @OnClick(R.id.button9)
-    public void btn9Clicked(Button btn){
-        editText.setText(editText.getText() + "9");
-    }
-    @OnClick(R.id.button10)
-    public void btn10Clicked(Button btn){
-        editText.setText(editText.getText() + ".");
-    }
-
-
 
     public void buttonAdd(View view){
 
