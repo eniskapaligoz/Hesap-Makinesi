@@ -7,129 +7,98 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
     boolean addValue, subValue, multplyValue, divideValue;
     float firstValue, secondValue;
 
-    Button btn0;
-    Button btn1;
-    Button btn2;
-    Button btn3;
-    Button btn4;
-    Button btn5;
-    Button btn6;
-    Button btn7;
-    Button btn8;
-    Button btn9;
-    Button btn10;
-    Button btnAdd;
-    Button btnSub;
-    Button btnMul;
-    Button btnDivide;
-    Button btnClear;
-    Button btnEqual;
-    EditText editText;
+    @BindView(R.id.button0) Button btn0;
+    @BindView(R.id.button1) Button btn1;
+    @BindView(R.id.button2) Button btn2;
+    @BindView(R.id.button3) Button btn3;
+    @BindView(R.id.button4) Button btn4;
+    @BindView(R.id.button5) Button btn5;
+    @BindView(R.id.button6) Button btn6;
+    @BindView(R.id.button7) Button btn7;
+    @BindView(R.id.button8) Button btn8;
+    @BindView(R.id.button9) Button btn9;
+    @BindView(R.id.button10) Button btn10;
+    @BindView(R.id.buttonadd) Button btnAdd;
+    @BindView(R.id.buttonsub) Button btnSub;
+    @BindView(R.id.buttonmul) Button btnMul;
+    @BindView(R.id.buttondiv) Button btnDivide;
+    @BindView(R.id.buttonC) Button btnClear;
+    @BindView(R.id.buttoneql) Button btnEqual;
+    @BindView(R.id.edt) EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        btn0 = (Button) findViewById(R.id.button0);
-        btn1 = (Button) findViewById(R.id.button1);
-        btn2 = (Button) findViewById(R.id.button2);
-        btn3 = (Button) findViewById(R.id.button3);
-        btn4 = (Button) findViewById(R.id.button4);
-        btn5 = (Button) findViewById(R.id.button5);
-        btn6 = (Button) findViewById(R.id.button6);
-        btn7 = (Button) findViewById(R.id.button7);
-        btn8 = (Button) findViewById(R.id.button8);
-        btn9 = (Button) findViewById(R.id.button9);
-        btn10 = (Button) findViewById(R.id.button10);
-        btnAdd = (Button) findViewById(R.id.buttonadd);
-        btnSub = (Button) findViewById(R.id.buttonsub);
-        btnMul = (Button) findViewById(R.id.buttonmul);
-        btnDivide = (Button) findViewById(R.id.buttondiv);
-        btnClear = (Button) findViewById(R.id.buttonC);
-        btnEqual = (Button) findViewById(R.id.buttoneql);
-        editText = (EditText) findViewById(R.id.edt);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "1");
-                }
-        });
-
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "2");
-                }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "3");
-            }
-        });
-
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "4");
-            }
-        });
-
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "5");
-            }
-        });
-
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "6");
-            }
-        });
-
-        btn7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "7");
-            }
-        });
-
-        btn8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "8");
-            }
-        });
-
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + "9");
-            }
-        });
-
-
-
-        btn10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText(editText.getText() + ".");
-            }
-        });
+        ButterKnife.bind(this);
 
 
     }
+
+    @OnClick(R.id.button0)
+    public void btn0Clicked(Button btn){
+        editText.setText(editText.getText() + "0");
+    }
+
+    @OnClick(R.id.button1)
+    public void btn1Clicked(Button btn){
+        editText.setText(editText.getText() + "1");
+    }
+
+    @OnClick(R.id.button2)
+    public void btn2Clicked(Button btn){
+        editText.setText(editText.getText() + "2");
+    }
+
+    @OnClick(R.id.button3)
+    public void btn3Clicked(Button btn){
+        editText.setText(editText.getText() + "3");
+    }
+
+    @OnClick(R.id.button4)
+    public void btn4Clicked(Button btn){
+        editText.setText(editText.getText() + "4");
+    }
+
+    @OnClick(R.id.button5)
+    public void btn5Clicked(Button btn){
+        editText.setText(editText.getText() + "5");
+    }
+
+    @OnClick(R.id.button6)
+    public void btn6Clicked(Button btn){
+        editText.setText(editText.getText() + "6");
+    }
+
+    @OnClick(R.id.button7)
+    public void btn7Clicked(Button btn){
+        editText.setText(editText.getText() + "7");
+
+    }
+    @OnClick(R.id.button8)
+    public void btn8Clicked(Button btn){
+        editText.setText(editText.getText() + "8");
+    }
+
+    @OnClick(R.id.button9)
+    public void btn9Clicked(Button btn){
+        editText.setText(editText.getText() + "9");
+    }
+    @OnClick(R.id.button10)
+    public void btn10Clicked(Button btn){
+        editText.setText(editText.getText() + ".");
+    }
+
+
 
     public void buttonAdd(View view){
 
@@ -141,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
             editText.setText(null);
         }
     }
-
 
     public void setButtonEql(View view){
         secondValue = Float.parseFloat(editText.getText() + "");
@@ -171,8 +139,8 @@ public class MainActivity extends AppCompatActivity {
         if (editText.getText().toString().matches("")) {
             Toast.makeText(this,"Must Be A Number !",Toast.LENGTH_LONG).show();
         }else {firstValue = Float.parseFloat(editText.getText() + "");
-        subValue = true;
-        editText.setText(null);}
+            subValue = true;
+            editText.setText(null);}
     }
 
     public void btnMult(View view){
@@ -191,5 +159,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
-
