@@ -39,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     float firstValue, secondValue;
-    boolean addValue, subValue, multiplyValue, divideValue;
+
+    final char ADDITION = '+';
+    final char SUBTRACTION = '-';
+    final char MULTIPLICATION = '*';
+    final char DIVISION = '/';
+    char ACTION;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             firstValue = Float.parseFloat(edt.getText() + "");
-            addValue = true;
+            ACTION = ADDITION;
             edt.setText(null);
         }
     }
@@ -173,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             firstValue = Float.parseFloat(edt.getText() + "");
-            subValue = true;
+            ACTION = SUBTRACTION;
             edt.setText(null);
         }
     }
@@ -184,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             firstValue = Float.parseFloat(edt.getText() +"");
-            multiplyValue = true;
+            ACTION = MULTIPLICATION;
             edt.setText(null);
         }
     }
@@ -195,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             firstValue = Float.parseFloat(edt.getText() + "");
-            divideValue = true;
+            ACTION = DIVISION;
             edt.setText(null);
         }
     }
@@ -205,25 +210,26 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Must Be A Number!",Toast.LENGTH_LONG).show();
         }
         else {
-
             secondValue = Float.parseFloat(edt.getText() + "");
 
-         if (addValue == true) {
-                edt.setText(firstValue + secondValue + "");
-                addValue = false;
-            } else if (subValue == true) {
-                edt.setText(firstValue - secondValue + "");
-                subValue = false;
-            } else if (multiplyValue == true) {
-                edt.setText(firstValue * secondValue + "");
-                multiplyValue = false;
-            } else if (divideValue == true) {
-                if (secondValue == 0) {
-                    Toast.makeText(this, "Sonsuz!!", Toast.LENGTH_LONG).show();
-                } else {
-                    edt.setText(firstValue / secondValue + "");
-                }
-                divideValue = false;
+            switch (ACTION){
+                case ADDITION:
+                    edt.setText(firstValue + secondValue + "");
+                    break;
+                case SUBTRACTION:
+                    edt.setText(firstValue - secondValue + "");
+                    break;
+                case MULTIPLICATION:
+                    edt.setText(firstValue * secondValue + "");
+                    break;
+                case DIVISION:
+                    if (secondValue == 0) {
+                        Toast.makeText(this, "Sonsuz!!", Toast.LENGTH_LONG).show();
+                    } else {
+                        edt.setText(firstValue / secondValue + "");
+                    }
+                    break;
+
             }
         }
     }
